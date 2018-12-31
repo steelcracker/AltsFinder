@@ -1,6 +1,6 @@
 -- AltsFinder Locale
 -- Please use the Localization App on WoWAce to Update this
--- http://www.wowace.com/projects/alts-finder/localization/
+-- https://www.wowace.com/projects/altsfinder/localization
 
 local L = LibStub("AceLocale-3.0"):NewLocale("AltsFinder", "esMX")
 if not L then return end
