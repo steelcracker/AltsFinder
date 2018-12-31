@@ -1,0 +1,21 @@
+## Interface: 80100
+## Version: @project-version@
+## Title: AltsFinder
+## Notes: Helps to find other player's alts.
+## Notes-ruRU: Помогает находить альтов другого игрока.
+## Author: Nikolay Kotlyarov
+## X-License: All Rights Reserved TODO: choose
+## X-Category: Auction TODO: choose
+## SavedVariables: AltsFinderDB
+## OptionalDeps: Ace3
+## X-Embeds: Ace3
+
+## TODO: check for toc structure and variables
+
+#@no-lib-strip@
+embeds.xml
+#@end-no-lib-strip@
+
+Locales\Locales.xml
+
+Core.lua
