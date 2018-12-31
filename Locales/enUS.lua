@@ -1,4 +1,8 @@
-local L = LibStub("AceLocale-3.0"):NewLocale("AltsFinder", "enUS", true)
+local debug = false
+--@debug@
+debug = true
+--@end-debug@
+local L = LibStub("AceLocale-3.0"):NewLocale("AltsFinder", "enUS", true, debug)
 
 ----------------------
 -- Main search pattern
