@@ -33,7 +33,7 @@ L["REMOVE_TARGET_BUTTON"] = "x"
 L["REMOVE_TARGET_BUTTON_DESCRIPTION"] = "Remove current target from the list"
 L["REMOVE_TARGET_BUTTON_CONFIRM"] = "Are you sure you want to remove the current target and all of its stats from DB?"
 
-L["TARGET_ALTS_STATS_TIMES_LOGGED_IN"] = "  %s time(s) logged in right after target: %s\n" -- format:(counter, name)
+L["TARGET_ALTS_STATS_TIMES_LOGGED_IN"] = "  %s login(s) right after target: %s\n" -- format:(counter, name)
 
 L["EXAMPLE_TARGET"] = "TargetExample"
 L["EXAMPLE_TARGET_STATS"] = {
@@ -48,7 +48,7 @@ L["EXAMPLE_TARGET_STATS"] = {
 }
 
 L["TARGETS_HELP_TEXT"] = [[===|cFF00CCFF Step 1 |r===
-Add a target whose alts you wish to find to the list. Enter player's nickname into the field above.
+Add a target whose alts you wish to find. Enter player's nickname into the field above.
 
 ===|cFF00CCFF Step 2 |r===
 Review (or modify) "Search" tab parameters along with the |cFF00FFFFhelp|r on that tab.
@@ -58,23 +58,24 @@ Wait. For how long? Until the target logs off several times to switch alts.
 Maybe a few days will be enough, but that depends entirely on the target.
 
 ===|cFF00CCFF Step 4 |r===
-Return to this tab to review the obtained target's potential alts stats. Addon counts potential alts'
-logins after target's logoff. Those with high numbers are first candidates to real target's alts.
-Add them to friends list and check!
+Return to this tab to review the obtained target's potential alts stats. Addon counts
+potential alts' logins after target's logoff. Those with high numbers are first candidates
+to real target's alts. Add them to friends list and check!
 
 ===|cFF00CCFF Step 5 |r===
 If found alts are false positives, then return to step 2 and refer to search tab's help.
 Add any real alts to targets list (as in step 1) so to find other alts of the original target.
 
-|cFFFF6EB4How it works:|r the addon waits for the target to log off. Right after that, the addon scans the chosen
-zone for currently online players (while target chooses his next alt and loads into the world). After
-target's alt presumably logs in, the addon scans for online players again (now they should include
-target's alt). Then two scan's (referred to as "before" and "after" scans) results are compared and
-any newly logged in players are added to the targets' stats database.
+|cFFFF6EB4How it works:|r the addon waits for the target to log off. Right after that, the addon scans
+the chosen zone for currently online players (while target chooses his next alt and loads
+into the world). After target's alt presumably logs in, the addon scans for online players
+again (now they should include target's alt). Then two scan's (referred to as "before"
+and "after" scans) results are compared and any newly logged in players are added to
+the targets' stats database.
 
-|cFFFF1A1ADisclaimer:|r the addon is not intended to pursue people! The original purpose was to monitor
-a competitor who undercut me at the auction house and undercut him in turn after he logs off
-completely from the game.]]
+|cFFFF1A1ADisclaimer:|r the addon is not intended to pursue people! The original purpose was to
+monitor a competitor who undercut me at the auction house and undercut him in turn
+after he logs off completely from the game.]]
 
 
 ---------------
@@ -109,10 +110,10 @@ L["QUERY_INPUT_USAGE"] = "Stormwind r-Human"
 
 L["RACE_DROPDOWN"] = "Select race"
 L["RACE_DROPDOWN_DESCRIPTION"] = "Choose a race to switch to."
-L["SEARCH_HELP_TEXT"] = [[|cFFFF6EB4Info:|r searching is based on two scan cycles – "before" and "after" potential alt logs in. Each cycle
-sends a series of /who requests, which can be configured. But there are limitations:
+L["SEARCH_HELP_TEXT"] = [[|cFFFF6EB4Info:|r searching is based on two scan cycles – "before" and "after" potential alt logs in.
+Each cycle sends a series of configurable /who requests. But there are limitations:
   • each /who query results are limited by 50 players by the server
-  • there is a server-side cooldown (around 5 seconds) between subsequent /who requests
+  • there is a server-side cooldown (around 5 seconds) between subsequent requests
   • scan cycle takes time: around 5*(#num-1) seconds (maybe target can relog faster)
   • no way to know beforehand the duration of target's relogin (depends on hardware)
 
@@ -124,19 +125,19 @@ These limitations impose some assumptions and restrictions to be made:
 
 ===|cFF00CCFF Step 1:|r Choose the zone parameter
 Think of which zone is the most popular to bind hearthstone to in the current expansion.
-Probably some major faction city. Your first bet is to choose the zone the target logs in to.
+Maybe some major faction city. Your first bet is to choose the zone the target logs in to.
 
 ===|cFF00CCFF Step 2:|r Decide on the number of queries
-Scan cycle duration should be less than the target's relogin time (see |cFF00FFFFsettings|r for more info).
-Relogin for HDDs takes half a minute, so 6-7 queries will have time to process. Relogin for SSDs
-is faster - like 10-15 secs, and that's a window for only 2-3 queries. If you've found at least one alt
-of a target, you can measure the target's relogin duration (constant for the particular target) - turn
-on "show timestamps" in social settings.
+Scan cycle duration should be less than the target's relogin time (see |cFF00FFFFsettings|r for more
+info). Relogin for HDDs takes half a minute, so 6-7 queries will have time to process.
+Relogin for SSDs is faster - like 10-15 secs, and that's a window for only 2-3 queries.
+If you've found at least one alt of a target, you can measure the target's relogin duration
+(constant for the particular target) - turn on "show timestamps" in social settings.
 
 ===|cFF00CCFF Step 3:|r Review and choose races to scan
 Probably you will have to rotate races periodically, especially if you've decided on a small number of queries.
 
-If nothing works, return to step 1 and try to choose some other zone, their are to be rotated too.]]
+Not working? Go to step 1 and try choosing some other zone, they're to be rotated too.]]
 
 
 ---------------
@@ -163,20 +164,23 @@ L["RESET_DB_BUTTON_CONFIRM"] = "Are you sure you want to |cFFFF0000purge|r the a
 
 L["SETTINGS_SECTION_SEARCH"] = "Search"
 
-L["DELAY_SLIDER_TEXT"] = [[You can tune the time delay between the first "before" scan finishes
+L["DELAY_SLIDER_TEXT"] = [[You can tune the delay between the first "before" scan finishes
 and the second "after" scan starts. The delay is needed just to be
-sure the second "after" scan performs any time after alt's login and
-can be of high value (though increasing false positives).]]
+sure the second "after" scan performs any time after alt's login
+and can be of high value (though increasing false positives).
+]]
 L["DELAY_SLIDER"] = "Second scan delay"
 L["DELAY_SLIDER_DESCRIPTION"] = "Second scan cycle delay in seconds. NOTE: You can enter manual value up to 5 minutes (300 seconds)."
 
 L["DURATION_INFO_TEXT"] = [[Ideally the time it takes to perform the first "before" scan
 should be less than the time it takes the target to relogin
-with an alt. Only the first number matters (last scan).]]
+with an alt. Only the first number matters (last scan).
+]]
 L["DURATION_INFO"] = "|cFF00FF00%12.1f (last scan)|r + delay = %.1f sec" -- format:(elapsed, elapsed + delay)
 
-L["TEST_SCAN_BUTTON_TEXT"] = [[You can start a test scan cycles to estimate how long does it take for your number of queries
-to process. This also may be useful to observe what's happening during the scan cycles.]]
+L["TEST_SCAN_BUTTON_TEXT"] = [[You can start a test scan cycles to estimate how long does it take for your number of
+queries to process. This also may be useful to observe what's happening during
+the scan cycles.]]
 L["TEST_SCAN_BUTTON"] = "Test scan"
 L["TEST_SCAN_BUTTON_DESCRIPTION"] = "Starts test scan cycle as if some target goes offline."
 L["TEST_SCAN_BUTTON_CONFIRM"] = "This will choose some random target from the targets list. Consider readding the target after completion to reset its stats."
@@ -185,8 +189,8 @@ L["INFO_TEST_SCAN_NO_TARGETS"] = "No targets found! Add at least one target to p
 
 L["SETTINGS_SECTION_DEBUG"] = "Debug"
 
-L["PRINT_STATS_BUTTON_TEXT"] = [[Prints all targets from the database along with their corresponding potential alts'
-stats to the chat:]]
+L["PRINT_STATS_BUTTON_TEXT"] = [[Prints all targets from the database along with their corresponding potential
+alts' stats to the chat:]]
 L["PRINT_STATS_BUTTON"] = "Print stats"
 L["PRINT_STATS_BUTTON_DESCRIPTION"] = "Prints targets and potential alts statistics."
 L["INFO_PRINT_STATS"] = "Printing DB stats storage:"
@@ -198,8 +202,8 @@ L["SHOW_STATUSES_BUTTON_DESCRIPTION"] = "Test online status of targets."
 L["INFO_SHOW_STATUSES"] = "Showing statuses:"
 L["INFO_SHOW_STATUSES_FOR"] = "%s is %s" -- format:(target, status)
 
-L["DEBUG_CHECKBOX_TEXT"] = [[This setting will turn ON all debug messages along with the usual info. If you are a
-developer or just want to peek into what's happening, you can turn this on:]]
+L["DEBUG_CHECKBOX_TEXT"] = [[This setting will turn ON all debug messages along with the usual info. If you
+are a developer or just want to peek into what's happening - turn this on:]]
 L["DEBUG_CHECKBOX"] = "Show debug messages"
 L["DEBUG_CHECKBOX_DESCRIPTION"] = "Will print additional debug messages to the chat."
 
