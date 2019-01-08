@@ -2,7 +2,7 @@
 
 AltsFinder is an addon for WoW that helps find other player's alts (alternate characters).  
 Internally it utilizes `/who` queries for searching when target character that you wish to spy upon goes offline.  
-The addon doesn't guarantee to find any alts with default settings - some user involvement might be needed.
+The addon doesn't guarantee to find any alts with the default settings - some user involvement might be needed.
 
 **Disclaimer**: the addon is not intended to pursue people! The original purpose was to monitor a competitor who undercut me at the auction house and undercut him in turn after he logs off completely from the game.
 
@@ -30,10 +30,11 @@ The addon waits for the target to log off. Right after that, the addon scans the
 
 ### Help
 There is an embedded help at the addon options screen (look for tabs' drop-down menus).  
-You can also refer to the [wiki pages](https://github.com/steelcracker/AltsFinder/wiki).
+You can also refer to the [Wiki pages](https://github.com/steelcracker/AltsFinder/wiki).
 
 ### Translation
-Please use the [Localization App](https://www.wowace.com/projects/altsfinder/localization) on WoWAce to translate.
+Please use the [localization app](https://www.wowace.com/projects/altsfinder/localization) on WoWAce to translate.
 
 ### Feedback
-If you have an issue or a feature suggestion, please use the [issue tracker](https://github.com/steelcracker/AltsFinder/issues). 
+If you have an issue or a feature suggestion, please use the [issue tracker](https://github.com/steelcracker/AltsFinder/issues).
+You can also use project's [forum thread](https://authors.curseforge.com/forums/world-of-warcraft/official-addon-threads/general-addons/237326-altsfinder) or contact me directly.
